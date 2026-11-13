@@ -1,0 +1,12 @@
+{
+  "layout": "gs-landing",
+  "sections": {
+    "main": {
+      "type": "gs-landing",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

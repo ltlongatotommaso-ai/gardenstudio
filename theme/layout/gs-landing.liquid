@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code | default: 'it' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garden Studio — Fotografa il giardino. Al resto pensiamo noi.</title>
+  <meta name="description" content="Fai una foto al giardino, al terrazzo o al balcone e scrivi come lo vorresti. In circa 30 secondi ricevi il progetto, le piante adatte alla tua luce e al tuo clima, la lista della spesa con i prezzi e il calendario delle cure.">
+  <meta property="og:title" content="Garden Studio — Fotografa il giardino. Al resto pensiamo noi.">
+  <meta property="og:description" content="Fai una foto al giardino, al terrazzo o al balcone e scrivi come lo vorresti. In circa 30 secondi ricevi il progetto, le piante adatte alla tua luce e al tuo clima, la lista della spesa con i prezzi e il calendario delle cure.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/1047/0621/2187/files/gs-og.png">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/1047/0621/2187/files/gs-og.png">
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/1047/0621/2187/files/gs-symbol.png?width=64">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/1047/0621/2187/files/gs-backyard-after.webp?width=1200">
+  {{ 'gs-landing.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+</head>
+<body>
+  {{ content_for_layout }}
+  <script src="{{ 'gs-i18n.js' | asset_url }}" defer></script>
+  <script src="{{ 'gs-landing.js' | asset_url }}" defer></script>
+</body>
+</html>
