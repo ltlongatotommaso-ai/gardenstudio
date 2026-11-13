@@ -56,7 +56,7 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-offer b{white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
 .gs-header{position:sticky;top:0;z-index:40;background:rgba(14,15,14,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .gs-nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
-.gs-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:"Syne",sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em}
+.gs-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:"Syne",sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;white-space:nowrap}
 .gs-logo img{width:32px;height:32px}
 .gs-logo em{color:var(--acc);font-style:normal}
 .gs-links{display:none;gap:28px;font-size:15px}
@@ -110,7 +110,7 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-label{font-size:13px;font-weight:600;color:var(--mut)}
 .gs-spaces{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .gs-space{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:5px 5px 8px;font-size:13px;font-weight:600;cursor:pointer;text-align:center;transition:border-color .2s}
-.gs-space img{aspect-ratio:16/10;object-fit:cover;border-radius:8px;margin-bottom:6px;width:100%}
+.gs-space img{height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:8px;margin-bottom:6px;width:100%}
 .gs-space.is-on{border-color:var(--acc);color:var(--acc)}
 .gs-demo textarea{width:100%;resize:vertical;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16px;line-height:1.45}
 .gs-demo textarea:focus,.gs-wform input[type=email]:focus{outline:2px solid var(--acc);outline-offset:1px}
@@ -196,7 +196,7 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-pdf-top small{color:#777;font-weight:400}
 .gs-pdf-t{font-size:22px}
 .gs-pdf>small{color:#666}
-.gs-pdf img{border-radius:10px;margin:8px 0;aspect-ratio:16/9;object-fit:cover}
+.gs-pdf img{height:auto;border-radius:10px;margin:8px 0;aspect-ratio:16/9;object-fit:cover}
 .gs-pdfrow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #DDD9CF}
 .gs-pdftot{font-weight:700;border:0;font-size:15px}
 .gs-pdf-btn{margin-top:8px;background:#1A1C1A;color:#F4F2EC;text-align:center;padding:11px;border-radius:999px;font-weight:600}
@@ -266,7 +266,7 @@ html[data-lang=it] .gs-only-en,html[data-lang=en] .gs-only-it,html:not([data-lan
   .gs-links{display:flex}
   .gs-hero{padding:72px 0 96px}
   .gs-hero-grid{grid-template-columns:1.02fr 1fr;gap:56px;align-items:center}
-  .gs-h1{font-size:clamp(48px,5.6vw,72px)}
+  .gs-h1{font-size:clamp(44px,4.3vw,60px)}
   .gs-sec{padding:112px 0}
   .gs-band-head{flex-direction:row;justify-content:space-between;align-items:baseline;gap:40px}
   .gs-band-head .gs-muted{max-width:44ch}
