@@ -8,6 +8,7 @@
   function setLang(l) {
     lang = l === 'en' ? 'en' : 'it';
     root.lang = lang; root.setAttribute('data-lang', lang); store('gs-lang', lang);
+    document.title = lang === 'en' ? 'Garden Studio — Snap your garden. We handle the rest.' : 'Garden Studio — Fotografa il giardino. Al resto pensiamo noi.';
     var d = I[lang];
     document.querySelectorAll('[data-i]').forEach(function (el) { var v = d[el.getAttribute('data-i')]; if (v != null) el.textContent = v; });
     document.querySelectorAll('[data-ip]').forEach(function (el) { var v = d[el.getAttribute('data-ip')]; if (v != null) el.placeholder = v; });
