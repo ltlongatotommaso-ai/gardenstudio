@@ -6,7 +6,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 "DM Sans",s
 img{max-width:100%;display:block}
 a{color:inherit}
 button,input,textarea{font:inherit;color:inherit}
-.gs h1,.gs h2,.gs h3,.gs-display{font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.02em;margin:0}
+.gs h1,.gs h2,.gs h3,.gs-display{font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.02em;margin:0;text-wrap:balance}
 .gs p{margin:0}
 .gs-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 .gs-narrow{max-width:780px}
@@ -266,7 +266,7 @@ html[data-lang=it] .gs-only-en,html[data-lang=en] .gs-only-it,html:not([data-lan
 @media (min-width:960px){
   .gs-links{display:flex}
   .gs-hero{padding:72px 0 96px}
-  .gs-hero-grid{grid-template-columns:1.02fr 1fr;gap:56px;align-items:center}
+  .gs-hero-grid{grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
   .gs-h1{font-size:clamp(44px,4.3vw,60px)}
   .gs-sec{padding:112px 0}
   .gs-band-head{flex-direction:row;justify-content:space-between;align-items:baseline;gap:40px}
