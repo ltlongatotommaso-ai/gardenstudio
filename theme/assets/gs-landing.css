@@ -148,7 +148,7 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-pname{font-weight:600;font-size:14.5px}
 .gs-psub{color:var(--mut);font-size:12.5px}
 .gs-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.gs-badges span{display:inline-flex;align-items:center;gap:5px;background:var(--surf2);border-radius:999px;padding:4px 10px 4px 7px;font-size:12px}
+.gs-badges>span{display:inline-flex;align-items:center;gap:5px;background:var(--surf2);border-radius:999px;padding:4px 10px 4px 7px;font-size:12px}
 .gs-badges .gs-ic{width:15px;height:15px}
 .gs-srow{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding-bottom:9px;border-bottom:1px dashed var(--line)}
 .gs-srow small{color:var(--mut)}
@@ -205,11 +205,14 @@ button,input,textarea{font:inherit;color:inherit}
 /* FAQ */
 .gs-faqs{margin-top:32px;border-top:1px solid var(--line)}
 .gs-faq{border-bottom:1px solid var(--line)}
-.gs-faq summary{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-weight:600;font-size:16.5px}
+.gs-faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;cursor:pointer;font-weight:600;font-size:16px;line-height:1.35;-webkit-tap-highlight-color:transparent}
 .gs-faq summary::-webkit-details-marker{display:none}
-.gs-faq summary span{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .2s;color:var(--acc)}
-.gs-faq[open] summary span{transform:rotate(45deg)}
-.gs-faq p{color:var(--mut);padding:0 40px 20px 0;font-size:15.5px}
+.gs-faq summary>[data-i]{flex:1;min-width:0}
+.gs-faq-ic{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:18px;line-height:1;color:var(--acc);transition:transform .2s,background .2s}
+.gs-faq[open] .gs-faq-ic{transform:rotate(45deg);background:var(--surf2)}
+.gs-faq[open] summary{color:var(--acc)}
+.gs-faq p{color:var(--mut);padding:0 0 20px;font-size:15px;line-height:1.6}
+@media (min-width:640px){.gs-faq summary{font-size:17px;padding:22px 0}.gs-faq p{padding-right:48px;font-size:15.5px}}
 
 /* Final + form */
 .gs-final{padding-bottom:110px}
