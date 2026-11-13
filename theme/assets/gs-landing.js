@@ -101,9 +101,10 @@
 
   /* ---------- Sticky buy bar (mobile) ---------- */
   var sticky = document.querySelector('.gs-sticky'), heroCta = document.getElementById('gs-hero-cta'), wait = document.getElementById('waitlist');
+  if (sticky) sticky.inert = true;
   if (sticky && heroCta && wait) {
     var pastHero = false, atEnd = false;
-    function upd() { var on = pastHero && !atEnd; sticky.classList.toggle('is-on', on); sticky.setAttribute('aria-hidden', on ? 'false' : 'true'); }
+    function upd() { var on = pastHero && !atEnd; sticky.classList.toggle('is-on', on); sticky.setAttribute('aria-hidden', on ? 'false' : 'true'); sticky.inert = !on; }
     new IntersectionObserver(function (es) { pastHero = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; upd(); }).observe(heroCta);
     new IntersectionObserver(function (es) { atEnd = es[0].isIntersecting; upd(); }, { threshold: .05 }).observe(wait);
   }
