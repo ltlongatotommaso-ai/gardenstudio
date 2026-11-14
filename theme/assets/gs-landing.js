@@ -96,6 +96,10 @@
     });
   }
 
+  /* ---------- Glass header: compact when scrolling ---------- */
+  var hdr = document.querySelector('.gs-header');
+  if (hdr) { var onS = function () { hdr.classList.toggle('is-scrolled', scrollY > 24); }; addEventListener('scroll', onS, { passive: true }); onS(); }
+
   /* ---------- Reveal ---------- */
   var rv = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); rv.unobserve(e.target); } }); }, { threshold: .15 });
   document.querySelectorAll('[data-reveal]').forEach(function (el) { rv.observe(el); });
