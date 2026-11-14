@@ -6,7 +6,9 @@ body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 "DM Sans",s
 img{max-width:100%;display:block}
 a{color:inherit}
 button,input,textarea{font:inherit;color:inherit}
-.gs h1,.gs h2,.gs h3,.gs-display{font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.gs h1,.gs h2{font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.03em;margin:0;text-wrap:balance}
+.gs h3{font-family:"DM Sans",sans-serif;font-weight:700;letter-spacing:-.015em;margin:0;text-wrap:balance}
+.gs-display{font-family:"DM Sans",sans-serif;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:0}
 .gs p{margin:0}
 .gs-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 .gs-narrow{max-width:780px}
@@ -16,11 +18,11 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-smallp{font-size:14px;margin-top:12px!important}
 .gs-strong{font-weight:600}
 .gs-eyebrow{color:var(--acc);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px!important}
-.gs-h1{font-size:clamp(38px,10vw,72px);line-height:1.02}
-.gs-h2{font-size:clamp(30px,7.5vw,52px);line-height:1.05;max-width:16ch}
+.gs-h1{font-size:clamp(34px,9vw,72px);line-height:1}
+.gs-h2{font-size:clamp(28px,6.6vw,46px);line-height:1.06;max-width:18ch}
 .gs-h2xl{font-size:clamp(34px,9vw,64px);max-width:none}
 .gs-h2s{font-size:clamp(24px,5.5vw,32px);line-height:1.1}
-.gs-h3{font-size:clamp(21px,5vw,28px);line-height:1.12}
+.gs-h3{font-size:clamp(19px,4.6vw,24px);line-height:1.2}
 .gs-lead{color:var(--mut);font-size:17px;max-width:56ch;margin-top:14px!important}
 .gs-sub{color:var(--mut);font-size:18px;max-width:46ch;margin-top:18px!important}
 .gs-center{text-align:center;display:flex;flex-direction:column;align-items:center}
@@ -34,9 +36,9 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-arrow{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
 
 /* Buttons */
-.gs-buy{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:8px 8px 8px 26px;border-radius:999px;background:var(--acc);color:#06210F;font-weight:600;font-size:16.5px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 30px -10px rgba(61,245,138,.55);transition:transform .15s,box-shadow .2s,background .2s}
+.gs-buy{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:8px 8px 8px 26px;border-radius:999px;background:var(--acc);color:#06210F;font-weight:600;font-size:16.5px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.45);transition:transform .15s,background .2s}
 .gs-buy:not(:has(.gs-chip)){padding-right:24px}
-.gs-buy:hover{background:#5BFF9F;transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 16px 40px -12px rgba(61,245,138,.7)}
+.gs-buy:hover{background:#5BFF9F}
 .gs-buy:hover .gs-arrow{transform:translateX(3px)}
 .gs-buy:active{transform:translateY(0) scale(.99)}
 .gs-chip{display:inline-flex;align-items:center;gap:8px;background:#0E0F0E;color:var(--fg);border-radius:999px;padding:10px 14px 10px 16px;font-weight:600}
@@ -178,7 +180,7 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-per-mut{color:var(--mut)}
 .gs-cbtn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;margin:22px 0;border-radius:999px;border:1px solid rgba(255,255,255,.2);text-decoration:none;font-weight:600;transition:background .2s,border-color .2s}
 .gs-cbtn:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.04)}
-.gs-card-hi .gs-cbtn{background:var(--acc);border-color:var(--acc);color:#06210F;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 30px -10px rgba(61,245,138,.55)}
+.gs-card-hi .gs-cbtn{background:var(--acc);border-color:var(--acc);color:#06210F}
 .gs-card-hi .gs-cbtn:hover{background:#5BFF9F}
 .gs-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14.5px}
 .gs-list li{display:flex;gap:10px;align-items:flex-start;line-height:1.4}
@@ -406,3 +408,36 @@ html[data-lang=it] .gs-only-en,html[data-lang=en] .gs-only-it,html:not([data-lan
 .gs-box li>div{gap:0;line-height:1.4}
 .gs-box li>div span{margin-top:2px}
 html{overflow-x:hidden}@supports (overflow:clip){html,body{overflow-x:clip}}
+
+/* ---------- v5: less template, more product ---------- */
+.gs-kicker{display:inline-flex;align-items:center;gap:8px;color:var(--mut);font-size:14px;margin-bottom:16px!important}
+.gs-kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--acc)}
+.gs-trustline{color:var(--mut);font-size:14px;margin-top:16px!important;max-width:44ch}
+.gs-frame-top{display:none}
+.gs-frame{padding:8px;border-radius:22px}
+.gs-hero-grid{grid-template-areas:"head" "vis" "copy";gap:22px}
+.gs-hero-head{grid-area:head;min-width:0}.gs-hero-vis{grid-area:vis}.gs-hero-copy{grid-area:copy}
+.gs-hero .gs-sub{margin-top:0!important}
+.gs-pdot{flex:none;width:12px;height:12px;border-radius:50%}
+.gs-price .gs-display{font-size:44px}
+.gs-guar-t{font-size:19px}
+.gs-pdf-t{font-family:"Syne",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em}
+.gs-req{margin-top:18px!important;padding-left:14px;border-left:2px solid var(--acc);color:var(--fg);font-size:15px;max-width:60ch}
+.gs-proof{display:grid;gap:12px;margin-top:22px}
+.gs-proofc{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:20px}
+.gs-city{font-weight:700;font-size:20px;letter-spacing:-.01em}
+.gs-proofc dl{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14.5px}
+.gs-proofc dt{color:var(--mut)}
+.gs-proofc dd{margin:0;text-align:right}
+.gs-proofc dd:first-of-type{text-align:left;grid-column:1/-1;margin-top:-4px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.gs-proofpro{font-weight:700;color:var(--acc)}
+.gs-presale{margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.gs-presale .gs-steps{margin-top:18px}
+.gs-num{border:0;background:var(--surf2);color:var(--fg);font-family:"DM Sans",sans-serif;font-weight:700}
+.gs-sec{padding:64px 0}
+@media (min-width:640px){.gs-proof{grid-template-columns:1fr 1fr}}
+@media (min-width:960px){
+  .gs-hero-grid{grid-template-columns:1.15fr 1fr;grid-template-areas:"head vis" "copy vis";column-gap:56px;row-gap:24px;align-items:start}
+  .gs-hero-vis{align-self:center}
+  .gs-sec{padding:104px 0}
+}
