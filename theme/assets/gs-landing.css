@@ -42,7 +42,7 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-chip{display:inline-flex;align-items:center;gap:8px;background:#0E0F0E;color:var(--fg);border-radius:999px;padding:10px 14px 10px 16px;font-weight:600}
 .gs-chip .gs-arrow{color:var(--acc)}
 .gs-buy-sm{min-height:42px;padding:6px 18px;font-size:14.5px}
-.gs-buy-full{width:100%}
+.gs-buy-full{width:100%;white-space:normal;text-align:center;line-height:1.25}
 .gs-ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;border:1px solid rgba(255,255,255,.18);text-decoration:none;font-weight:500;white-space:nowrap;transition:border-color .2s,background .2s}
 .gs-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04)}
 .gs-white{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;border:0;background:var(--fg);color:#0E0F0E;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .15s,background .2s}
@@ -342,6 +342,8 @@ html[data-lang=it] .gs-only-en,html[data-lang=en] .gs-only-it,html:not([data-lan
 .gs-box li>div{display:flex;flex-direction:column;gap:2px}
 .gs-box li>div span{color:var(--mut);font-size:13.5px}
 .gs-mats li{display:flex;justify-content:space-between;gap:10px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.gs-mats b{white-space:nowrap;flex:none}
+.gs-ai>*,.gs-ai-form,.gs-ai-form>*{min-width:0}
 .gs-mats small{color:var(--mut)}
 .gs-res-budget{display:flex;gap:24px;align-items:flex-end;margin-top:14px}
 .gs-res-budget small{display:block;color:var(--mut);font-size:12.5px;margin:0}
