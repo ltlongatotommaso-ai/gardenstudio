@@ -18,7 +18,7 @@ button,input,textarea{font:inherit;color:inherit}
 .gs-smallp{font-size:14px;margin-top:12px!important}
 .gs-strong{font-weight:600}
 .gs-eyebrow{color:var(--acc);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px!important}
-.gs-h1{font-size:clamp(34px,9vw,72px);line-height:1}
+.gs-h1{font-size:clamp(30px,8.2vw,72px);line-height:1.02}
 .gs-h2{font-size:clamp(28px,6.6vw,46px);line-height:1.06;max-width:18ch}
 .gs-h2xl{font-size:clamp(34px,9vw,64px);max-width:none}
 .gs-h2s{font-size:clamp(24px,5.5vw,32px);line-height:1.1}
