@@ -2,13 +2,13 @@
 :root{--bg:#0E0F0E;--alt:#121412;--surf:#1B1D1B;--surf2:#242724;--line:rgba(255,255,255,.09);--fg:#F2F3EF;--mut:#A3A8A0;--acc:#3DF58A;--acc-d:#1FC765;--amber:#F5B83D;--sky:#7CC4F5;--indigo:#A9A3F5;--r:18px}
 *,*:before,*:after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
 button,input,textarea{font:inherit;color:inherit}
 .gs h1,.gs h2{font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.03em;margin:0;text-wrap:balance}
-.gs h3{font-family:"DM Sans",sans-serif;font-weight:700;letter-spacing:-.015em;margin:0;text-wrap:balance}
-.gs-display{font-family:"DM Sans",sans-serif;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:0}
+.gs h3{font-family:"Instrument Sans",sans-serif;font-weight:700;letter-spacing:-.015em;margin:0;text-wrap:balance}
+.gs-display{font-family:"Instrument Sans",sans-serif;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:0}
 .gs p{margin:0}
 .gs-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 .gs-narrow{max-width:780px}
@@ -433,7 +433,7 @@ html{overflow-x:hidden}@supports (overflow:clip){html,body{overflow-x:clip}}
 .gs-proofpro{font-weight:700;color:var(--acc)}
 .gs-presale{margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
 .gs-presale .gs-steps{margin-top:18px}
-.gs-num{border:0;background:var(--surf2);color:var(--fg);font-family:"DM Sans",sans-serif;font-weight:700}
+.gs-num{border:0;background:var(--surf2);color:var(--fg);font-family:"Instrument Sans",sans-serif;font-weight:700}
 .gs-sec{padding:64px 0}
 @media (min-width:640px){.gs-proof{grid-template-columns:1fr 1fr}}
 @media (min-width:960px){
