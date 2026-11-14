@@ -6,7 +6,8 @@
   function t(k) { return (S[lang()] || {})[k] || ''; }
   function $(s, el) { return (el || root).querySelector(s); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function eur(n) { n = Math.round(Number(n) || 0); return lang() === 'en' ? '€' + n.toLocaleString('en-GB') : n.toLocaleString('it-IT') + ' €'; }
+  function grp(n, sep) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep); }
+  function eur(n) { n = Math.round(Number(n) || 0); return lang() === 'en' ? '€' + grp(n, ',') : grp(n, '.') + ' €'; }
 
   /* ---------- Tabs ---------- */
   var tabs = document.querySelectorAll('.gs-tabs [data-tab]');
