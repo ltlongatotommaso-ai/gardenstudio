@@ -21,7 +21,15 @@
   var form = $('.gs-ai-form'), file = $('[data-file]'), prev = $('[data-prev]'), drop = $('[data-drop]'),
     desc = $('#gs-ai-desc'), email = $('#gs-ai-email'), consent = $('[data-consent]'), err = $('[data-err]'), go = $('[data-go]'),
     idle = $('[data-idle]'), busy = $('[data-busy]'), res = $('[data-res]');
-  var photo = null, space = 'garden', sending = false;
+  var photo = null, space = 'garden', exposure = '', sending = false, t0 = Date.now();
+  var loc = $('#gs-ai-loc'), hp = $('[data-hp]');
+  try { var savedLoc = localStorage.getItem('gs-ai-loc'); if (savedLoc) loc.value = savedLoc; } catch (e) {}
+  root.querySelectorAll('[data-ex]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      exposure = b.getAttribute('data-ex');
+      root.querySelectorAll('[data-ex]').forEach(function (x) { x.classList.toggle('is-on', x === b); });
+    });
+  });
   try { var saved = localStorage.getItem('gs-ai-email'); if (saved) email.value = saved; } catch (e) {}
 
   root.querySelectorAll('[data-sp]').forEach(function (b) {
@@ -72,6 +80,16 @@
   ['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove('is-drag'); }); });
   drop.addEventListener('drop', function (e) { setFile(e.dataTransfer.files && e.dataTransfer.files[0]); });
 
+  /* Hero upload: hand the file to the try form and jump there */
+  var heroFile = document.querySelector('[data-hero-file]');
+  if (heroFile) heroFile.addEventListener('change', function () {
+    var f = heroFile.files && heroFile.files[0]; if (!f) return;
+    setFile(f);
+    var how = document.getElementById('how');
+    if (how) how.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { desc.focus({ preventScroll: true }); }, 900);
+  });
+
   /* ---------- Progress ---------- */
   var timer = null;
   function startProgress() {
@@ -104,13 +122,20 @@
     $('[data-r-title]').textContent = p.title || '';
     $('[data-r-sum]').textContent = p.summary || '';
     $('[data-r-plants]').innerHTML = (p.plants || []).map(function (x) {
-      return '<li><svg class="gs-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>' + esc(x.name) + (x.qty ? ' × ' + esc(x.qty) : '') + '</b><span>' + esc(x.why || '') + '</span></div></li>';
+      return '<li><svg class="gs-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>' + esc(x.name) + (x.qty ? ' × ' + esc(x.qty) : '') + '</b>' +
+        (x.size ? '<small class="gs-psize">' + esc(x.size) + '</small>' : '') + '<span>' + esc(x.why || '') + '</span></div>' +
+        (x.price_eur ? '<em class="gs-pprice">' + eur(x.price_eur) + '</em>' : '') + '</li>';
     }).join('');
     $('[data-r-mats]').innerHTML = (p.materials || []).map(function (x) {
-      return '<li><span>' + esc(x.item) + ' <small>· ' + esc(x.qty) + '</small></span><b>' + eur(x.price_eur) + '</b></li>';
+      return '<li><span>' + esc(x.item) + ' <small>· ' + esc(x.qty) + '</small>' + (x.pro_only ? ' <i class="gs-probadge">' + esc(t('proOnly')) + '</i>' : '') + '</span><b>' + eur(x.price_eur) + '</b></li>';
     }).join('');
-    $('[data-r-diy]').textContent = eur(p.budget_diy_eur);
-    $('[data-r-pro]').textContent = eur(p.budget_pro_eur);
+    var tt = p.totals || {};
+    $('[data-r-items]').textContent = eur(tt.items_eur != null ? tt.items_eur : 0);
+    $('[data-r-labour]').textContent = p.labour_eur ? '+ ' + eur(p.labour_eur) : '—';
+    function range(a, b, fb) { return (a != null && b != null) ? eur(a).replace(/\s?€$/, '') + '–' + eur(b) : eur(fb); }
+    $('[data-r-diy]').textContent = range(tt.diy_min, tt.diy_max, p.budget_diy_eur);
+    $('[data-r-pro]').textContent = range(tt.pro_min, tt.pro_max, p.budget_pro_eur);
+    $('[data-r-region]').textContent = p.region ? '· ' + t('region') + ' ' + p.region : '';
     $('[data-r-care]').innerHTML = (p.care || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
     var dl = $('[data-dl]'); dl.href = d.image;
     var left = typeof d.remaining === 'number' ? d.remaining : null;
@@ -120,6 +145,19 @@
 
   $('[data-again]').addEventListener('click', function () { view('idle'); desc.focus(); form.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 
+  /* Also add the email to Shopify customers (same list as the waitlist form). Best effort. */
+  var joined = {};
+  function joinShopify(em) {
+    if (joined[em] || /lovable\.app$/.test(location.hostname)) return;
+    joined[em] = 1;
+    try {
+      var fd = new FormData();
+      fd.append('form_type', 'customer'); fd.append('utf8', '✓');
+      fd.append('contact[email]', em); fd.append('contact[tags]', 'waitlist,ai-try,landing');
+      fetch('/contact', { method: 'POST', body: fd, credentials: 'same-origin' }).catch(function () {});
+    } catch (x) {}
+  }
+
   /* ---------- Submit ---------- */
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -127,17 +165,20 @@
     var em = email.value.trim(), ds = desc.value.trim();
     if (!photo) return showErr(t('e_noimg'));
     if (ds.length < 3) return showErr(t('e_desc'));
+    var lc = loc.value.trim();
+    if (lc.length < 2) { loc.focus(); return showErr(t('e_loc')); }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) return showErr(t('e_email'));
     if (!consent.checked) return showErr(t('e_consent'));
     showErr('');
-    try { localStorage.setItem('gs-ai-email', em); } catch (x) {}
+    try { localStorage.setItem('gs-ai-email', em); localStorage.setItem('gs-ai-loc', lc); } catch (x) {}
+    joinShopify(em);
     sending = true; go.disabled = true; view('busy'); startProgress();
     if (innerWidth < 960) busy.scrollIntoView({ behavior: 'smooth', block: 'center' });
     var ctrl = window.AbortController ? new AbortController() : null;
     var to = setTimeout(function () { if (ctrl) ctrl.abort(); }, 90000);
     fetch(URL_AI, {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: ctrl ? ctrl.signal : undefined,
-      body: JSON.stringify({ image: photo, description: ds, space: space, lang: lang(), email: em.toLowerCase(), consent: true })
+      body: JSON.stringify(Object.assign({ image: photo, description: ds, space: space, lang: lang(), email: em.toLowerCase(), consent: true, location: lc, hp: hp.value, t: Date.now() - t0 }, exposure ? { exposure: exposure } : {}))
     }).then(function (r) {
       return r.json().catch(function () { return { error: 'ai_failed' }; }).then(function (j) { return { ok: r.ok, j: j }; });
     }).then(function (o) {

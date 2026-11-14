@@ -382,3 +382,22 @@ html[data-lang=it] .gs-only-en,html[data-lang=en] .gs-only-it,html:not([data-lan
   .gs-cmp-r>div{padding:16px 18px}
   .gs-cmp-h>div{font-size:14px}
 }
+
+/* AI v2 */
+.gs-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.gs-hint{margin-top:-6px!important}
+.gs-seg4{grid-template-columns:repeat(4,1fr)}
+.gs-seg4 .gs-segb{font-size:13px;padding:10px 4px}
+.gs-box li{position:relative}
+.gs-psize{display:block;color:var(--mut);font-size:12px}
+.gs-pprice{font-style:normal;font-weight:600;white-space:nowrap;margin-left:auto;padding-left:8px}
+.gs-probadge{font-style:normal;font-size:11px;font-weight:600;color:var(--amber);border:1px solid rgba(245,184,61,.4);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.gs-sumrow{display:flex;justify-content:space-between;gap:10px;margin-top:12px;font-size:14.5px}
+.gs-sumrow b{white-space:nowrap}
+.gs-sumrow-mut{margin-top:6px;color:var(--mut)}
+.gs-region{text-transform:none;letter-spacing:0;font-weight:500;color:var(--fg)}
+.gs-budgetbox .gs-res-budget{flex-wrap:wrap;gap:12px 32px;margin:6px 0 10px}
+.gs-mid{font-size:24px}
+.gs-keep{margin-top:-6px!important}
+.gs-heroup{cursor:pointer;color:var(--fg);font-weight:600;border-color:rgba(61,245,138,.45);transition:border-color .2s,background .2s}
+.gs-heroup:hover{background:rgba(61,245,138,.06);border-color:var(--acc)}
