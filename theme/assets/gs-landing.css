@@ -560,3 +560,5 @@ a.gs-heroup{text-decoration:none;color:inherit}
 .gs-opt b{font-size:13px;overflow-wrap:anywhere}
 @media (min-width:420px){.gs-opt b{font-size:14px}}
 @media (min-width:750px){.gs-opt b{font-size:15px}}
+.gs-opt b{overflow-wrap:normal;letter-spacing:-.02em}
+@media (max-width:419px){.gs-st{padding:14px 12px}.gs-opt{padding:11px 10px}.gs-opt b{font-size:12.5px}}
