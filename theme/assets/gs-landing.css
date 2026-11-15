@@ -575,3 +575,21 @@ a.gs-heroup{text-decoration:none;color:inherit}
 .gs-why .gs-why-n{font-size:30px;color:var(--acc);line-height:1;margin-bottom:6px}
 .gs-pro-page .gs-guar{margin-top:0}
 @media (min-width:750px){.gs-why{grid-template-columns:repeat(3,1fr)}} .gs-why{grid-template-columns:1fr}
+
+/* ===== Progetto Completo showcase ===== */
+.gs-oneoff{margin:28px auto 0;max-width:1100px;display:grid;gap:26px;padding:22px;border-radius:26px;border:1px solid rgba(61,245,138,.28);background:radial-gradient(120% 90% at 100% 0%,rgba(61,245,138,.10),transparent 55%),var(--surf)}
+.gs-oneoff-copy{display:flex;flex-direction:column;gap:14px;min-width:0}
+.gs-oneoff-copy .gs-kicker{margin-bottom:0!important}
+.gs-oneoff-t{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(30px,7vw,46px);line-height:1.02;letter-spacing:-.03em}
+.gs-oneoff .gs-list{margin:4px 0}
+.gs-oneoff-buy{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:4px}
+.gs-oneoff-buy .gs-price{margin:0!important}
+.gs-oneoff-vis{display:grid;gap:10px;align-content:start;min-width:0}
+.gs-var{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.gs-var img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.gs-var-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gs-edit{display:grid;gap:8px;padding:12px 14px;border-radius:14px;background:var(--bg);border:1px solid var(--line);font-size:14px}
+.gs-edit-q{color:var(--fg);font-style:italic}
+.gs-edit-a{display:flex;align-items:center;gap:8px;color:var(--acc);font-weight:600;font-size:13px}
+.gs-edit-a .gs-check{width:16px;height:16px}
+@media (min-width:900px){.gs-oneoff{grid-template-columns:1.05fr .95fr;padding:36px;gap:40px;align-items:center}}
