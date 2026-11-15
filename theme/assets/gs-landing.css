@@ -556,3 +556,7 @@ a.gs-heroup{text-decoration:none;color:inherit}
 .gs-opts{grid-template-columns:repeat(2,minmax(0,1fr))}
 .gs-opt{min-width:0}
 @media (min-width:750px){.gs-st-steps li span[data-i]{display:inline}.gs-st-steps li:not(.is-on){padding:6px 10px 6px 6px}.gs-opts{grid-template-columns:repeat(4,minmax(0,1fr))}.gs-opts3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.gs-st-steps li span[data-i]{background:none!important;color:inherit!important;width:auto;height:auto}
+.gs-opt b{font-size:13px;overflow-wrap:anywhere}
+@media (min-width:420px){.gs-opt b{font-size:14px}}
+@media (min-width:750px){.gs-opt b{font-size:15px}}
