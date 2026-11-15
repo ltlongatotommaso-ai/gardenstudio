@@ -1,9 +1,9 @@
 /* Garden Studio — Shopify cookie banner and preferences, restyled to the brand.
    Shopify injects its own styles after ours, so rules use ids and !important. */
-#shopify-pc__banner.shopify-pc__banner__dialog{background:#1B1D1B!important;color:#F2F3EF!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:20px!important;box-shadow:0 30px 70px -20px rgba(0,0,0,.85)!important;padding:22px!important;left:24px!important;right:auto!important;bottom:24px!important;width:430px!important;max-width:calc(100% - 24px)!important;min-width:0!important;font-family:"Instrument Sans",system-ui,sans-serif!important;-webkit-font-smoothing:antialiased}
+#shopify-pc__banner.shopify-pc__banner__dialog{background:#1B1D1B!important;color:#F2F3EF!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:20px!important;box-shadow:0 30px 70px -20px rgba(0,0,0,.85)!important;padding:22px!important;left:24px!important;right:auto!important;bottom:24px!important;width:430px!important;max-width:calc(100% - 24px)!important;min-width:0!important;font-family:"Jost",system-ui,sans-serif!important;-webkit-font-smoothing:antialiased}
 #shopify-pc__banner .shopify-pc__banner__wrapper{align-items:stretch!important}
 #shopify-pc__banner .shopify-pc__banner__body{margin-bottom:14px!important}
-#shopify-pc__banner h2{font-family:"Syne","Instrument Sans",sans-serif!important;font-weight:800!important;font-size:19px!important;line-height:1.2!important;letter-spacing:-.01em!important;color:#F2F3EF!important;margin:0 0 8px!important;display:flex!important;align-items:center;gap:10px}
+#shopify-pc__banner h2{font-family:"Syne","Jost",sans-serif!important;font-weight:800!important;font-size:19px!important;line-height:1.2!important;letter-spacing:-.01em!important;color:#F2F3EF!important;margin:0 0 8px!important;display:flex!important;align-items:center;gap:10px}
 #shopify-pc__banner h2::before{content:"";width:28px;height:28px;flex:none;background:url("https://cdn.shopify.com/s/files/1/1047/0621/2187/files/gs-symbol.png?width=96") center/contain no-repeat}
 #shopify-pc__banner p{color:#A3A8A0!important;font-size:14.5px!important;line-height:1.55!important;font-family:inherit!important}
 #shopify-pc__banner a{color:#F2F3EF!important;text-underline-offset:3px}
@@ -24,9 +24,9 @@
 
 /* Preferences dialog */
 #shopify-pc__prefs__overlay{background:rgba(0,0,0,.66)!important;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-#shopify-pc__prefs__dialog{background:#1B1D1B!important;color:#F2F3EF!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:22px!important;box-shadow:0 40px 90px -30px rgba(0,0,0,.9)!important;left:50%!important;transform:translate(-50%,-50%)!important;width:min(640px,calc(100% - 24px))!important;font-family:"Instrument Sans",system-ui,sans-serif!important;-webkit-font-smoothing:antialiased}
+#shopify-pc__prefs__dialog{background:#1B1D1B!important;color:#F2F3EF!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:22px!important;box-shadow:0 40px 90px -30px rgba(0,0,0,.9)!important;left:50%!important;transform:translate(-50%,-50%)!important;width:min(640px,calc(100% - 24px))!important;font-family:"Jost",system-ui,sans-serif!important;-webkit-font-smoothing:antialiased}
 #shopify-pc__prefs__dialog header{border-bottom:1px solid rgba(255,255,255,.1)!important;padding:24px 24px 20px!important;align-items:flex-start!important;flex-direction:column!important;gap:16px}
-#shopify-pc__prefs__header-title{font-family:"Syne","Instrument Sans",sans-serif!important;font-weight:800!important;font-size:22px!important;letter-spacing:-.01em;color:#F2F3EF!important;text-align:left!important;margin:0!important;padding:0 40px 0 0!important}
+#shopify-pc__prefs__header-title{font-family:"Syne","Jost",sans-serif!important;font-weight:800!important;font-size:22px!important;letter-spacing:-.01em;color:#F2F3EF!important;text-align:left!important;margin:0!important;padding:0 40px 0 0!important}
 #shopify-pc__prefs__header-close{top:22px!important;right:22px!important;width:34px!important;height:34px!important;border:1px solid rgba(255,255,255,.14)!important}
 #shopify-pc__prefs__header-close svg path{fill:#F2F3EF!important}
 #shopify-pc__prefs__dialog .shopify-pc__prefs__header-actions{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;gap:8px!important;padding:0!important;width:100%!important}
@@ -35,7 +35,7 @@
 #shopify-pc__prefs__dialog .shopify-pc__prefs__header-actions #shopify-pc__prefs__header-save{background:#F2F3EF!important;color:#0E0F0E!important;border-color:#F2F3EF!important}
 #shopify-pc__prefs__dialog .shopify-pc__prefs__header-actions button:focus-visible,#shopify-pc__prefs__header-close:focus-visible{outline:none!important;box-shadow:0 0 0 3px rgba(61,245,138,.45)!important}
 #shopify-pc__prefs__dialog h3,#shopify-pc__prefs__dialog .shopify-pc__prefs__option label{color:#F2F3EF!important;font-family:inherit!important}
-#shopify-pc__prefs__dialog h3{font-family:"Syne","Instrument Sans",sans-serif!important;font-weight:800!important;letter-spacing:-.01em}
+#shopify-pc__prefs__dialog h3{font-family:"Syne","Jost",sans-serif!important;font-weight:800!important;letter-spacing:-.01em}
 #shopify-pc__prefs__dialog p,#shopify-pc__prefs__dialog li{color:#A3A8A0!important;line-height:1.55!important}
 #shopify-pc__prefs__dialog .shopify-pc__prefs__intro-main{padding:20px 24px 0!important}
 #shopify-pc__prefs__dialog .shopify-pc__prefs__options{padding:0 24px 24px!important;color:#F2F3EF!important}
