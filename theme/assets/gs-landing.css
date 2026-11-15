@@ -468,3 +468,16 @@ html{overflow-x:hidden}@supports (overflow:clip){html,body{overflow-x:clip}}
 /* v5.2 polish */
 .gs-h2xl{font-size:clamp(28px,7vw,52px);max-width:20ch}
 @media (max-width:639px){.gs-header .gs-logo{font-size:16px;gap:8px}.gs-header .gs-logo img{width:28px;height:28px}.gs-header .gs-nav{padding:0 6px 0 12px}.gs-header .gs-lang button{padding:5px 9px}}
+/* ---------- Results page + one free try ---------- */
+.gs-rp{padding:28px 0 96px;min-height:70vh}
+.gs-rp-wrap{max-width:920px}
+.gs-rp-back{margin:0 0 22px!important}
+.gs-rp .gs-h2{max-width:22ch}
+.gs-rp-busy .gs-ai-busy{margin-top:22px;aspect-ratio:4/3;max-height:70vh}
+.gs-rp-res{display:flex;flex-direction:column;gap:16px}
+.gs-rp-res .gs-lead{margin-top:0!important}
+.gs-rp-res .gs-req{margin-top:0!important}
+.gs-rp-next{margin-top:12px;background:var(--surf);border:1px solid rgba(61,245,138,.35);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.gs-rp-msg{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding:24px 0}
+.gs-ai-used{background:var(--surf);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px}
+@media (min-width:960px){.gs-rp{padding-top:48px}}
