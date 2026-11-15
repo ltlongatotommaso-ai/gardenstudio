@@ -146,19 +146,6 @@
 
   $('[data-again]').addEventListener('click', function () { view('idle'); desc.focus(); form.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 
-  /* Also add the email to Shopify customers (same list as the waitlist form). Best effort. */
-  var joined = {};
-  function joinShopify(em) {
-    if (joined[em] || /lovable\.app$/.test(location.hostname)) return;
-    joined[em] = 1;
-    try {
-      var fd = new FormData();
-      fd.append('form_type', 'customer'); fd.append('utf8', '✓');
-      fd.append('contact[email]', em); fd.append('contact[tags]', 'waitlist,ai-try,landing');
-      fetch('/contact', { method: 'POST', body: fd, credentials: 'same-origin' }).catch(function () {});
-    } catch (x) {}
-  }
-
   /* ---------- Submit ---------- */
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -172,7 +159,6 @@
     if (!consent.checked) return showErr(t('e_consent'));
     showErr('');
     try { localStorage.setItem('gs-ai-email', em); localStorage.setItem('gs-ai-loc', lc); } catch (x) {}
-    joinShopify(em);
     sending = true; go.disabled = true; view('busy'); startProgress();
     if (innerWidth < 960) busy.scrollIntoView({ behavior: 'smooth', block: 'center' });
     var ctrl = window.AbortController ? new AbortController() : null;
