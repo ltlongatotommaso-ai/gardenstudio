@@ -547,3 +547,12 @@ a.gs-heroup{text-decoration:none;color:inherit}
   .gs-st-sum{grid-template-columns:240px 1fr;align-items:start}
   .gs-st-sum img{aspect-ratio:4/3}
 }
+/* studio fixes: step pills and option grid on phones */
+.gs-st-steps li span{width:auto;height:auto;border-radius:0;display:inline;background:none;font:inherit}
+.gs-st-steps li>span:first-child{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--surf2);font-family:"Syne",sans-serif;font-weight:800;font-size:12px;color:var(--fg)}
+.gs-st-steps li.is-on>span:first-child,.gs-st-steps li.is-done>span:first-child{background:var(--acc);color:#06210F}
+.gs-st-steps li:not(.is-on) span[data-i]{display:none}
+.gs-st-steps li:not(.is-on){padding:6px}
+.gs-opts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gs-opt{min-width:0}
+@media (min-width:750px){.gs-st-steps li span[data-i]{display:inline}.gs-st-steps li:not(.is-on){padding:6px 10px 6px 6px}.gs-opts{grid-template-columns:repeat(4,minmax(0,1fr))}.gs-opts3{grid-template-columns:repeat(3,minmax(0,1fr))}}
