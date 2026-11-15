@@ -1,0 +1,12 @@
+{
+  "layout": "gs-landing",
+  "sections": {
+    "main": {
+      "type": "gs-studio",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
